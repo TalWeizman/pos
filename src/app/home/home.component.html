@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <app-nav-bar [current]="current_menu"  (mainToggle)="menu_event($event)" ></app-nav-bar>
+        <md-progress-bar *ngIf="loading_prog" mode="indeterminate" style="position:reletive"></md-progress-bar>
+    </div>
+    
+    <div class="row">
+        
+        <app-sale-screen (lodingemitter)="loading($event)" *ngIf='current_menu == "sale"'></app-sale-screen>
+        <app-main-screen *ngIf='current_menu == "main"' (nav)="menu_event($event)" > </app-main-screen>
+        <app-back-office *ngIf='current_menu == "back"' ></app-back-office>
+        <app-setting *ngIf='current_menu == "settings"' ></app-setting>
+
+    </div>
+</div>

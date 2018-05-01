@@ -1,0 +1,102 @@
+<md-grid-list cols="5" rowHeight="1.2:1" style="padding-top:20px">
+  <md-grid-tile>
+    <button color="accent" class="large_text" md-raised-button (click)='nav_to("sale")'>
+      <div class="row large_icon">
+            <i class="material-icons md-48">shopping_cart</i>
+      </div>
+      <div class="row">
+        מסך מכירה
+      </div>
+    </button>
+  </md-grid-tile>
+
+  <md-grid-tile>
+    <button color="accent" class="large_text" md-raised-button (click)='nav_to("back")'>
+      <div class="row large_icon">
+            <i class="fa fa-briefcase" aria-hidden="true"></i>
+      </div>
+      <div class="row">
+        משרד אחורי
+      </div>
+    </button>
+  </md-grid-tile>
+    
+  <md-grid-tile (click)="x_report_dialog()">
+    <button color="primary" class="large_text" md-raised-button>
+      <div class="row large_icon">
+           <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+      <div class="row">
+        x דוח
+      </div>
+    </button>
+  </md-grid-tile>
+
+  <md-grid-tile>
+    <button color="primary" class="large_text" md-raised-button>
+      <div class="row large_icon">
+           <i class="material-icons md-48">find_in_page</i>
+      </div>
+      <div class="row">
+        חיפוש חשבונית
+      </div>
+    </button>
+  </md-grid-tile>
+
+    <md-grid-tile>
+    <button color="primary" class="large_text" md-raised-button>
+      <div class="row large_icon">
+           <i class="material-icons md-48">note_add</i>
+      </div>
+      <div class="row">
+        הצהרת קופאי 
+      </div>
+    </button>
+  </md-grid-tile>
+
+  <md-grid-tile>
+    <button color="primary" class="large_text" md-raised-button>
+      <div class="row large_icon">
+           <i class="fa fa-clock-o" aria-hidden="true"></i>
+      </div>
+      <div class="row">
+        כניסה למשמרת 
+      </div>
+    </button>
+  </md-grid-tile>
+
+  <md-grid-tile>
+    <button color="primary" class="large_text" md-raised-button>
+      <div class="row large_icon">
+           <i class="fa fa-users" aria-hidden="true"></i>
+      </div>
+      <div class="row">
+        מועדון לקוחות 
+      </div>
+    </button>
+  </md-grid-tile>
+
+    <md-grid-tile >
+    <button color="warn" class="large_text" md-raised-button (click)='nav_to("settings")'>
+      <div class="row large_icon">
+           <i class="material-icons md-48">settings</i>
+      </div>
+      <div class="row">
+        הגדרות
+      </div>
+    </button>
+  </md-grid-tile>
+  
+  <md-grid-tile>
+    <button color="warn" class="large_text" md-raised-button>
+      <div class="row large_icon">
+           <i class="fa fa-calendar-times-o" aria-hidden="true"></i>
+      </div>
+      <div class="row">
+        סגירת יום
+      </div>
+    </button>
+  </md-grid-tile>
+  
+
+</md-grid-list>

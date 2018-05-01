@@ -1,0 +1,11 @@
+<md-tab-group #tabGroup>
+  <md-tab label="מרכז בקרה"><app-bo-dashboard></app-bo-dashboard></md-tab>
+  <md-tab label="משתמשים"><app-bo-users (perEmiiter)="tabGroup.selectedIndex = 5"></app-bo-users></md-tab>
+  <md-tab label="מוצרים"><app-bo-items (catEmiiter)="tabGroup.selectedIndex = 3" ></app-bo-items></md-tab>
+  <md-tab label="קטגוריות"><app-bo-categories></app-bo-categories></md-tab>
+  <md-tab label="דוחות"><app-bo-reports></app-bo-reports></md-tab>
+  <md-tab label="הרשאות"><app-bo-permission></app-bo-permission></md-tab>
+  <md-tab label="ניהול מלאי"><app-bo-inventory></app-bo-inventory></md-tab>
+  <md-tab label="מכירות"><app-bo-sales></app-bo-sales></md-tab>
+  <md-tab label="לקוחות"><app-bo-customers></app-bo-customers></md-tab>
+</md-tab-group>

@@ -1,0 +1,20 @@
+md-list-item button{
+
+     width: 100%
+}
+
+.category-container{
+
+    overflow:auto;
+    height: calc(100vh - 370px) !important;
+
+}
+
+
+.cont2{
+
+    height: calc(100vh - 70px) !important;
+}
+
+
+

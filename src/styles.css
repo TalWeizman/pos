@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@import url('https://fonts.googleapis.com/css?family=Alef');
+
+@import url('https://fonts.googleapis.com/css?family=Secular+One');
+
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre');
+
+
+*{
+
+    font-family: 'Alef', sans-serif;
+}

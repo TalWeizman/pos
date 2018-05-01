@@ -1,0 +1,61 @@
+<md-toolbar color="primary" style="max-height:48px;height:48px;direction:rtl">
+  
+  <button md-icon-button *ngIf='current != "main"' (click)='menu_click("main")'>
+    <md-icon>arrow_forward</md-icon>
+  </button>
+
+  <button md-icon-button *ngIf='current == "main"' [mdMenuTriggerFor]="menu">
+    <md-icon>more_vert</md-icon>
+  </button>
+
+  <span style="margin-left:10px">שקל - מערכת מכירה אינטרנטית</span>
+    
+    
+  <md-menu #menu="mdMenu">
+    <button md-menu-item (click)='menu_click("main")'>
+      
+      <span>מסך ראשי</span>
+      <md-icon class="icon-padding">home</md-icon>
+    </button>
+    <button md-menu-item (click)='menu_click("sale")'>
+      <span>מסך מכירה</span>
+      <md-icon class="icon-padding">shopping_cart</md-icon>
+    </button>
+    <button md-menu-item (click)='menu_click("back")'>
+      <span>משרד אחורי</span>
+      <md-icon class="icon-padding"><i class="fa fa-briefcase" aria-hidden="true"></i></md-icon>
+      
+    </button>
+    <button md-menu-item (click)='menu_click("settings")'>
+      <span>הגדרות קופה</span>
+      <md-icon class="icon-padding">settings</md-icon>
+      
+    </button>
+    <button md-menu-item (click)='log_out()'>
+      <span>התנתק</span>
+      <md-icon class="icon-padding"><i class="fa fa-sign-out" aria-hidden="true"></i></md-icon>
+      
+    </button>
+
+  </md-menu>
+
+  <span class="example-spacer"></span>
+  
+   
+<!-- <i class="fa fa-sign-in" aria-hidden="true"></i>   
+  <md-icon class="example-icon">wifi</md-icon>
+<md-icon class="example-icon">email</md-icon>
+  <md-icon class="example-icon">signal_wifi_off</md-icon>
+  <md-icon class="example-icon">lock</md-icon>
+   <md-icon class="example-icon">lock_open</md-icon>
+   <md-icon class="example-icon">warning</md-icon> -->
+   <span>אין משתמש מחובר</span>
+   <span></span>
+   
+   <md-icon class="example-icon">person</md-icon>
+<span style="padding-left:20px"> | </span>
+<span id="date_time">{{ date +" | " + time }}</span>
+
+
+</md-toolbar>
+

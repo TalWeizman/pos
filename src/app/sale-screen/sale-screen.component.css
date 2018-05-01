@@ -1,0 +1,30 @@
+.items-container{
+
+    overflow:auto;
+    
+    height: calc(100vh - 88px);
+    min-width: 600px;
+    
+
+}
+.side-container{
+
+    min-width: 200px;
+}
+
+.cart-container{
+
+    min-width: 400px;
+}
+
+.fixed-screen{
+
+    height: calc(100vh - 88px);
+
+    min-width: 1200px;
+
+}
+
+
+
+

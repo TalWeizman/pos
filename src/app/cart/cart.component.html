@@ -1,0 +1,39 @@
+
+
+<md-list class="cart-list noselect">
+  <div class="cart-container">
+  
+  <md-list-item style="text-align: center" *ngIf="!cart.items[0]">
+    <h3 md-line><i class="fa fa-exclamation-circle" aria-hidden="true"></i> אין פריטים בעגלה</h3>
+  </md-list-item>
+  
+  <md-list-item *ngFor="let item of cart.items; let i = index" class="w3-animate-opacity" >
+    <md-icon class="pointer" md-list-icon style="padding-top:10px" (click)="delete_item(i)">delete</md-icon>
+    <md-icon class="pointer" md-list-icon (click)="add_item(i)"><i class="fa fa-plus" aria-hidden="true" style="font-size:20px"></i></md-icon>    
+    <md-icon class="pointer" md-list-icon (click)="sub_item(i)"><i class="fa fa-minus" aria-hidden="true" style="font-size:20px"></i></md-icon>
+    <p style="padding-top:8px">{{ "x" + item.amount}}</p>
+
+    <h4 md-line>{{item.name}}</h4>
+    <p md-line>{{item.price}}</p>
+    <md-divider></md-divider>
+  </md-list-item>
+</div>
+  <md-divider></md-divider>
+  <h4 md-subheader style="font-weight: bold;float:left">{{ cart.items | cartItems }} פריטים</h4>
+  <h4 md-subheader style="font-weight: bold"> ₪ {{cart.total_amount * tax | number}} : מע"מ</h4>
+  <h4 md-subheader style="font-weight: bold;padding-top: 0px !important"> ₪ {{cart.total_amount}} : סה"כ</h4>
+  
+  <md-list-item>
+   <button md-raised-button class="ddd" color="primary" (click)="cash_dialog()" >תשלום <i class="fa fa-money" aria-hidden="true"></i></button>
+  </md-list-item>
+    <md-list-item>
+    <button md-raised-button class="ddd" color="primary">פתח מגירה <i class="fa fa-caret-square-o-right" aria-hidden="true"></i></button>
+    <button md-raised-button class="ddd" color="primary" (click)="cash_sale()">חיוב כללי <i class="fa fa-ils" aria-hidden="true"></i></button>
+   <button md-raised-button class="ddd" color="primary" (click)="disscount_dialog()" >הנחה <i class="fa fa-percent" aria-hidden="true"></i></button>
+  </md-list-item>
+  <md-list-item class="right">
+    <button md-raised-button class="ddd" (click)="open_calc()" color="primary">מחשבון <i class="fa fa-calculator" aria-hidden="true"></i></button>
+    <button md-raised-button class="ddd" color="primary" (click)="clean_cart()">ניקוי מסך <i class="fa fa-trash" aria-hidden="true"></i></button>
+    <button md-raised-button class="ddd" color="primary">זיכוי <i class="fa fa-retweet" aria-hidden="true"></i></button>
+  </md-list-item>
+</md-list>

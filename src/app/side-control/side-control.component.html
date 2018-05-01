@@ -1,0 +1,45 @@
+          
+        <div class="cont2">
+          <md-list>
+            <div class="cont1">
+            <md-list-item>
+              <h3 md-line style="text-align:right">חיפוש פריט</h3>
+              <md-input-container md-line>
+                <input mdInput (keyup)="keypress($event)" style="text-align:right">
+              </md-input-container>
+            </md-list-item>
+
+            <md-list-item>
+              <button md-raised-button color="primary">מועדון לקוחות <i class="fa fa-users" aria-hidden="true"></i></button>
+            </md-list-item>
+            <md-list-item>
+              <button md-raised-button (click)="shift_log()" color="primary">כניסת למשמרת <i class="fa fa-clock-o" aria-hidden="true"></i></button>
+            </md-list-item>
+          
+            </div>
+            </md-list>
+
+              <md-list>
+                <div style="padding-right: 10px">
+                  <md-list-item>
+                    <h3 md-line style="text-align:right">קטגוריות</h3>
+                  </md-list-item>
+
+                  <md-list-item>
+                    <button md-raised-button [color]="SelectedCategory == '' ? 'primary' : ''" (click)="cat_click('')">הכל  <i class="fa fa-circle-thin" aria-hidden="true"></i></button>
+                  </md-list-item>
+                </div>
+              
+                <div class="category-container">
+                  <md-list-item *ngFor="let item of categories">
+                    <button md-raised-button [color]="SelectedCategory == item ? 'primary' : ''" (click)="cat_click(item)">{{item}}  <i class="fa fa-circle-thin" aria-hidden="true"></i></button>
+                  </md-list-item>
+                </div>
+              
+              </md-list>
+            
+
+          </div>
+            
+          
+

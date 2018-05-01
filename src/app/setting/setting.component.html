@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row">
+
+    
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding-right:50px" >
+
+      <br><br>
+      <md-card>
+
+        <img src="http://placehold.it/100"  class="img-responsive" alt="Responsive image">
+        <br>
+        <div class="text-right biss_stst">
+          <p class="text-center"><b>{{settings.bis_name}}</b></p>
+          <p> שם חברה: {{settings.com_name}}</p>
+          <p> מספר חפ: {{settings.id_number}}</p>
+          <p> מספר טלפון: {{settings.phone}}</p>
+        </div>
+      </md-card>
+     
+    </div>
+ 
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+      <br><br><br><br><br><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">אחוז מע"מ</span>
+      </div>
+      <br>
+      <div class="input-group">
+        
+        <md-slide-toggle>מעם כלול במחיר מוצר</md-slide-toggle>
+      </div>
+      <br>
+      <div class="input-group">
+        <textarea rows="4" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2"></textarea>
+        <span class="input-group-addon" id="basic-addon2">טקסט לתחילת<br> החשבונית</span>
+      </div>
+            <br>
+      <div class="input-group">
+        <textarea rows="4" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2"></textarea>
+        <span class="input-group-addon" id="basic-addon2">טקסט לסוף<br> החשבונית</span>
+      </div>
+      
+    </div>
+ 
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <br>
+      <h2 style="text-align:center">פירטי עסק</h2>
+      <p  style="text-align:center;color:gray">יופיע כפרטי העסק בחשבונית</p>
+       <br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Recipient's username" [(ngModel)]="settings.bis_name" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">שם עסק</span>
+      </div>
+      <br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Recipient's username"  [(ngModel)]="settings.com_name" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">שם חברה/עסק מלא</span>
+      </div>
+      <br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Recipient's username" [(ngModel)]="settings.id_number" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">מספר ע"מ/ח"פ</span>
+      </div>
+      <br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Recipient's username" [(ngModel)]="settings.phone" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">טלפון</span>
+      </div>
+      <br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">כתובת</span>
+      </div>
+      <br>
+      <div class="input-group">
+        <input type="file" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">logo</span>
+      </div>
+    </div>
+    
+
+
+
+
+  </div>
+
+<div class="row">
+  
+</div>
+
+</div>

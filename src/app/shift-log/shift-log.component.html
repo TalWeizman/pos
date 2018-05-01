@@ -1,0 +1,30 @@
+<div style="text-align:center" class="noselect">
+  <h1 md-dialog-title>כניסה למשמרת</h1>
+  <span md-dialog-content>הכנס סיסמת עובד בבבקשה</span>
+  <h1 md-dialog-title></h1>
+  <div md-dialog-content>
+
+    <md-grid-list cols="3" rowHeight="1:0.9" >
+      <md-grid-tile><button (click)="number_click(1)" style="font-size:3.2em" md-button color="primary">1</button></md-grid-tile>
+      <md-grid-tile><button (click)="number_click(2)" style="font-size:3.2em" md-button color="primary">2</button></md-grid-tile>
+      <md-grid-tile><button (click)="number_click(3)" style="font-size:3.2em" md-button color="primary">3</button></md-grid-tile>
+      <md-grid-tile><button (click)="number_click(4)" style="font-size:3.2em" md-button color="primary">4</button></md-grid-tile>
+      <md-grid-tile><button (click)="number_click(5)" style="font-size:3.2em" md-button color="primary">5</button></md-grid-tile>
+      <md-grid-tile><button (click)="number_click(6)" style="font-size:3.2em" md-button color="primary">6</button></md-grid-tile>
+      <md-grid-tile><button (click)="number_click(7)" style="font-size:3.2em" md-button color="primary">7</button></md-grid-tile>
+      <md-grid-tile><button (click)="number_click(8)" style="font-size:3.2em" md-button color="primary">8</button></md-grid-tile>
+      <md-grid-tile><button (click)="number_click(9)" style="font-size:3.2em" md-button color="primary">9</button></md-grid-tile>
+      <md-grid-tile></md-grid-tile>
+      <md-grid-tile><button (click)="number_click(0)" style="font-size:3.2em" md-button color="primary">0</button></md-grid-tile>
+      <md-grid-tile><button (click)="clean_input()" style="font-size:3.2em" md-button color="primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button></md-grid-tile>
+    </md-grid-list>
+    <md-input-container>
+      <input mdInput style="text-align:center" type="password" [(ngModel)]="password">
+    </md-input-container> 
+
+  </div>
+  <div md-dialog-actions>
+    <button md-button md-dialog-close>ביטול</button>
+    <button md-raised-button color="primary"  md-dialog-close="{{password}}">אישור</button>
+</div>
+</div>

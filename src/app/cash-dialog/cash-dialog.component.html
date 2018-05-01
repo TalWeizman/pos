@@ -1,0 +1,87 @@
+
+<p class="add-user-btn" style="text-align:right">
+  <button md-raised-button class="c-btn" style="background:url('http://images1.ynet.co.il//PicServer4/2015/11/23/6652303/Untitled-3_wa.jpg');background-size: cover" (click)="add_cash(200)"></button>
+  <button md-raised-button class="c-btn" style="background:url('https://kavimvenekudot.files.wordpress.com/2012/10/d7a9d798d7a8-d79ed790d794-d7a9d7a7d79c.jpg');background-size: cover" (click)="add_cash(100)"></button>
+  <button md-raised-button class="c-btn" style="background:url('http://www.boi.org.il/he/NewsAndPublications/PressReleases/PublishingImages/10-09-2014F.jpg');background-size: cover" (click)="add_cash(50)"></button>
+  <button md-raised-button class="c-btn" style="background:url('http://www.oketz.com/images/money-20-shekel.jpg');background-size: cover" (click)="add_cash(20)"></button>
+</p>
+<p class="add-user-btn" style="text-align:right">
+  <button md-fab style="background:url('https://userscontent2.emaze.com/images/151db479-ec48-4e00-a2d0-004792f47889/d658cbee4377d382c7602ad70df9c533.png');background-size: cover" (click)="add_cash(10)"></button>
+  <button md-fab style="background:url('https://userscontent2.emaze.com/images/151db479-ec48-4e00-a2d0-004792f47889/13214d5dd515b339bae90818559578de.png');background-size: cover" (click)="add_cash(5)"></button>
+  <button md-fab style="background:url('http://www.matbeot.890m.com/israel_2_shekel_back.jpg');background-size: cover" (click)="add_cash(2)"></button>
+  <button md-fab style="background:url('http://www.boi.org.il/he/Currency/PublishingImages/CNS1-2shekel.gif');background-size: cover" (click)="add_cash(1)"></button>
+  <button md-fab style="background:url('https://en.numista.com/catalogue/photos/israel/g171.jpg');background-size: cover" (click)="add_cash(0.5)"></button>
+  <button md-fab style="background:url('http://www.boi.org.il/he/Currency/PublishingImages/CNS10-3cent.gif');background-size: cover" (click)="add_cash(0.1)"></button>
+  <button md-fab style="background:url('http://www.boi.org.il/he/Currency/PublishingImages/CNS5-2cent.gif');background-size: cover" (click)="add_cash(0.05)"></button>
+</p>
+<br>
+
+<div style="text-align:right">
+
+     <p> הסכום לתשלום הוא {{data}}</p>
+     
+    <p><md-icon style="position:relative;top:6px" (click)="add_cash(-cash_recived)">delete</md-icon> <input type="number" [(ngModel)]="cash_recived" style="width:70px"> התקבל </p>
+
+    <p> {{cash_recived - data > 0 ?  cash_recived - data : "0"}} העודף ללקוח</p>
+
+</div>
+
+<p>
+
+  <button md-raised-button style="width:80px" color="accent" (click)="adding_castumer = !adding_castumer">בחר לקוח</button>
+
+   <button md-raised-button style="width:80px" color="accent" (click)="adding_castumer = !adding_castumer">הוסף לקוח</button>
+
+  <button md-raised-button style="width:120px" color="accent">הדפסת חשבונית</button>
+
+  <button md-raised-button style="width:110px" (click)="sending = !sending"  color="accent">שלח חשבונית</button>
+
+  
+</p>
+
+<p>
+  <button md-raised-button style="width:100%" color="primary">תשלום</button>
+
+ 
+</p>
+
+  <div *ngIf="sending && !adding_castumer">
+
+    <p>
+          <button color="accent" md-raised-button>שלח</button>
+          <md-input-container  style="width:75%">
+            <input mdInput placeholder="אימייל" maxlength="30">
+          </md-input-container>
+
+    </p>    
+    <p>
+     <button color="accent" md-raised-button>שלח</button>
+       
+          <md-input-container  style="width:75%">
+            <input mdInput placeholder="טלפון" maxlength="30">
+          </md-input-container>
+   </p>
+  </div>   
+<br>
+<form class="example-form" *ngIf="adding_castumer && !sending">
+
+  <p>
+          <md-input-container class="example-full-width" style="padding:0">
+            <input mdInput placeholder="שם הלקוח" maxlength="30">
+          </md-input-container>
+  </p><p>
+          <md-input-container class="example-full-width">
+            <input mdInput placeholder="טלפון" maxlength="15">
+          </md-input-container>
+  </p>
+
+    <p>
+      <md-input-container class="example-full-width">
+        <input mdInput placeholder="אימייל" maxlength="30">
+      </md-input-container>
+  </p>  
+  <p style="text-align:right">
+        <button color="accent" md-raised-button>שמור</button>
+   
+  </p>  
+</form>

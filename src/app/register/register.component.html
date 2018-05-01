@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">טופס הרשמה</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="">
+                <form [formGroup]="reg_form" class="form-signin" (ngSubmit)="submit_reg_form(reg_form.value)">
+                
+                <input type="text"  formControlName="full_name" class="form-control" mdTooltip="שם מלא בעברית" mdTooltipPosition="before"   placeholder="שם מלא" required autofocus>
+                  <div  class="alert alert-danger w3-animate-opacity alertmsg" role="alert" *ngIf="!reg_form.controls['full_name'].valid && reg_form.controls['full_name'].touched">לפחות 3 אותיות ולא יותר מ30 אותיות</div>
+
+                <input type="text"  formControlName="email" class="form-control" placeholder="אימייל" required>
+                  <div  class="alert alert-danger w3-animate-opacity alertmsg" role="alert" *ngIf="!reg_form.controls['email'].valid && reg_form.controls['email'].touched">הכנס כתובת אימייל חוקית</div>
+
+                <input type="text"  formControlName="phone" class="form-control" placeholder="(מספר סלולרי (משמש לזיהוי משתמש" required>
+                  <div  class="alert alert-danger w3-animate-opacity alertmsg" role="alert" *ngIf="!reg_form.controls['phone'].valid && reg_form.controls['phone'].touched">מספר סלולרי חוקי בן 10 ספרות בלי תוים</div>
+
+                <br>
+                <input type="text" formControlName="user_name" class="form-control" placeholder="שם משתמש" required>
+                
+                  <div  class="alert alert-danger w3-animate-opacity alertmsg" role="alert" *ngIf="!reg_form.controls['user_name'].valid && reg_form.controls['user_name'].touched">בין 3-30 תוים בלי ספרות ואותיות בלבד</div>
+
+                <input type="password" formControlName="password" class="form-control" placeholder="סיסמה" required>
+                   <div  class="alert alert-danger w3-animate-opacity alertmsg" role="alert" *ngIf="!reg_form.controls['password'].valid && reg_form.controls['password'].touched">לפחות 8 תוים מקסימום 30 באנלית</div>
+
+                <input type="password" formControlName="confirm_password" class="form-control" placeholder="אישור סיסמה" required>
+                  <div  class="alert alert-danger w3-animate-opacity alertmsg" role="alert" *ngIf="reg_form.controls['confirm_password'].touched && !(reg_form.controls['password'].value == reg_form.controls['confirm_password'].value)">הססמאות לא תואמות</div>
+
+                <button md-raised-button type="submit" color="primary" class="btn-block" [disabled]="!reg_form.valid">הרשמה</button>
+                  
+                <a href="#" class="pull-right need-help" >?צריך עזרה</a><span class="clearfix"></span>
+                </form>
+              
+            </div>
+            <a [routerLink]="['/login']" class="text-center new-account">כבר רשום?..מעבר לאיזור התחברות</a>
+        </div>
+    </div>
+</div>
+

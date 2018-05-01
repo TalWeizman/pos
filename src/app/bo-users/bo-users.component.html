@@ -1,0 +1,74 @@
+<md-toolbar>
+  
+      <button class="add_button" md-fab [disabled]="!new_item" (click)="add_new_user()" ><md-icon >add</md-icon></button>
+
+      <button class="add_button" md-fab [disabled]="!trash" (click)="delete_user()" ><md-icon>delete</md-icon></button>
+
+      <button class="add_button" md-fab [disabled]="!save" (click)="save_user()" ><md-icon>save</md-icon></button>
+      
+      <span class="fill-space"></span>
+      <h2>ניהול משתמשים</h2>
+  
+</md-toolbar>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+    
+    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;overflow:auto;height:100%"> 
+        
+      <md-card>
+        <br>
+        <md-checkbox [disabled]="inputs_disabled" [(ngModel)]="user.is_active">פעיל</md-checkbox>
+        <br>
+
+        <p style="padding-top:32px;">שם עובד*</p>
+        <input type="text" [(ngModel)]="user.name" [disabled]="inputs_disabled" class="form-control" placeholder="שם העובד">
+      
+            <p>טלפון</p>
+        <input type="text" [(ngModel)]="user.phone" [disabled]="inputs_disabled"  class="form-control" placeholder="טלפון">
+        
+            <p>תז</p>
+        <input type="number" [(ngModel)]="user.id_number" [disabled]="inputs_disabled"  class="form-control" placeholder="תז">
+        
+              <p>סיסמה*</p>
+        <input type="password" [(ngModel)]="user.h_password" [disabled]="inputs_disabled"  class="form-control" placeholder="סיסמה">
+        <br>
+      <p> <span style="float:left;cursor: pointer"><a (click)="go_to_permissions()"> * הוסף הרשאה חדשה +</a></span> </p>
+        
+      <select class="form-control" placeholder="בחר הרשאה" [disabled]="inputs_disabled" [(ngModel)]="user.permission">
+          <option *ngFor="let per of permissions" [value]="per.name">{{per.name}}<option>
+        </select>
+  </md-card>
+    </div>
+    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="quary" placeholder="חיפוש משתמש">
+            <span class="input-group-addon"><md-icon>search</md-icon></span>
+          </div>
+      
+          <md-list style="text-align:right">
+            <h3 md-subheader>משתמשים</h3>
+            <md-divider></md-divider>
+
+          </md-list>
+                  <div class="row">
+
+                      <md-card (click)="user_selected(user)" style="margin:10px;height:40px;width:28%;float:right;padding-left:10px; padding-top:10px;text-align:right;" *ngFor="let user of users | async | itemFilter : quary;">
+
+                                {{user.name}}
+
+                            <md-icon md-button class="edit_btn" (click)="edit_user(user);$event.stopPropagation()">edit</md-icon>
+                      </md-card>
+        </div>
+           
+  </div>
+
+
+  </div>
+
+</div>

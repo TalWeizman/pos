@@ -1,0 +1,43 @@
+.cart-container{
+    min-height: 100px;
+    height: calc(100vh - 330px);
+     overflow: auto;
+
+}
+
+.cart-list{
+
+    text-align: right;
+    height: calc(100vh - 88px);
+
+}
+
+.cart-list h4{
+
+    font-weight: bold;
+ 
+}
+
+md-list-item button.ddd{
+
+    width: 100%;
+    margin-right: 3px;    
+}
+
+.pointer{
+
+    cursor: pointer;
+    margin-right: 8px;
+
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+

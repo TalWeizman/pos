@@ -1,0 +1,27 @@
+<div class="fixed-screen"> 
+
+        <div class="col-xs-4 col-sm-4 col-md-4 cart-container">
+          
+          <app-cart [cart]="cart"></app-cart>
+
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6 items-container" style="padding-top:10px">
+            
+        
+                    <md-grid-list cols="4" rowHeight="1:1">
+                        <md-grid-tile *ngFor="let item of items | async | productsFilter : quary : categoty">
+                            <app-item [item]="item" (click)="productClicked(item)"></app-item>
+                        </md-grid-tile>
+                    </md-grid-list>
+            
+        </div>
+        
+        <div class="col-xs-2 col-sm-2 col-md-2 side-container">
+        
+            <app-side-control [items]="items" (catpresed)="cat_change($event)"  (keypresed)="quary_change($event)"  ></app-side-control>
+
+        </div>
+        
+    
+</div>

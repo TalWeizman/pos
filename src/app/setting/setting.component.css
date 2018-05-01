@@ -1,0 +1,19 @@
+input {
+
+    text-align:right;
+}
+
+textarea {
+    resize: none;
+}
+
+img{
+
+    margin: 0 auto;
+}
+
+.biss_stst p{
+
+    line-height: 10px;
+        direction: rtl;
+}

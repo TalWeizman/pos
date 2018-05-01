@@ -1,0 +1,41 @@
+.example-form {
+    width: 400px;
+}
+
+.example-form input {
+    direction:rtl;
+}
+
+.my-form2{
+  direction:rtl;
+  text-align: right;
+}
+
+.my-form2 *{
+  transform-origin: right top;
+  
+}
+
+.mat-input-placeholder-wrapper{
+    
+
+    direction:rtl;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+.mat-input-wrapper{
+
+    margin: 0.5em 0 !important;
+
+}
+
+.c-btn{
+
+    background-size: cover;
+    width: 100px;
+    height: 50px;
+}

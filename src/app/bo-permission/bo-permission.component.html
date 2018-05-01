@@ -1,0 +1,96 @@
+<md-toolbar>
+  
+      <button class="add_button" md-fab [disabled]="!new_item" (click)="add_new_permission()" ><md-icon >add</md-icon></button>
+
+      <button class="add_button" md-fab [disabled]="!trash" (click)="delete_permission()" ><md-icon>delete</md-icon></button>
+
+      <button class="add_button" md-fab [disabled]="!save" (click)="save_permission()" ><md-icon>save</md-icon></button>
+      
+      <span class="fill-space"></span>
+      <h2>ניהול הרשאות</h2>
+  
+</md-toolbar>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+    
+    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;overflow:auto;height:100%"> 
+        
+
+        <p style="padding-top:32px;">שם</p>
+        <input type="text" [(ngModel)]="permission.name" [disabled]="inputs_disabled" class="form-control" placeholder="שם הרשאה">
+      
+        <div class="row">
+            
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <p>משרד אחורי</p>
+               מרכז בקרה <md-checkbox [(ngModel)]="permission.permissions.dash" [disabled]="inputs_disabled"></md-checkbox><br>
+               משתמשים <md-checkbox [(ngModel)]="permission.permissions.users" [disabled]="inputs_disabled"></md-checkbox><br>
+               פריטים <md-checkbox [(ngModel)]="permission.permissions.items" [disabled]="inputs_disabled"></md-checkbox><br>
+              קטגוריות <md-checkbox  [(ngModel)]="permission.permissions.categories" [disabled]="inputs_disabled"></md-checkbox><br>
+              דוחות <md-checkbox [(ngModel)]="permission.permissions.reports" [disabled]="inputs_disabled"></md-checkbox><br>
+               הרשאות <md-checkbox [(ngModel)]="permission.permissions.permissions" [disabled]="inputs_disabled"></md-checkbox><br>
+              ניהול מלרי <md-checkbox [(ngModel)]="permission.permissions.invantory" [disabled]="inputs_disabled"></md-checkbox><br>
+              מכירות <md-checkbox [(ngModel)]="permission.permissions.sales" [disabled]="inputs_disabled"></md-checkbox><br>
+              לקוחות <md-checkbox [(ngModel)]="permission.permissions.castumers" [disabled]="inputs_disabled"></md-checkbox><br>
+              הגדרות קופה <md-checkbox [(ngModel)]="permission.permissions.settings" [disabled]="inputs_disabled"></md-checkbox><br>
+              <br><br>
+
+
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <p>עמדת מכירה</p>
+              עמדת מכירה <md-checkbox [(ngModel)]="permission.permissions.pos" [disabled]="inputs_disabled"></md-checkbox><br>
+              הנחה <md-checkbox [(ngModel)]="permission.permissions.pos_disscount" [disabled]="inputs_disabled"></md-checkbox><br>
+              פתח מגירה <md-checkbox [(ngModel)]="permission.permissions.pos_open_cash" [disabled]="inputs_disabled" ></md-checkbox><br>
+              זיכוי <md-checkbox [(ngModel)]="permission.permissions.pos_refound" [disabled]="inputs_disabled" ></md-checkbox><br>
+              חיוב כללי <md-checkbox [(ngModel)]="permission.permissions.pos_general_cash" [disabled]="inputs_disabled" ></md-checkbox><br>
+              מועדון לקוחות <md-checkbox [(ngModel)]="permission.permissions.pos_castumer_add" [disabled]="inputs_disabled"></md-checkbox><br>
+              תשלום במזומן <md-checkbox [(ngModel)]="permission.permissions.pos_cash_pay" [disabled]="inputs_disabled" ></md-checkbox><br>
+              תשלום באשראי <md-checkbox [(ngModel)]="permission.permissions.pos_credit_pay" [disabled]="inputs_disabled" ></md-checkbox><br>
+              תשלום בהקפה <md-checkbox [(ngModel)]="permission.permissions.pos_over_pay" [disabled]="inputs_disabled" ></md-checkbox><br>
+              סגירת יום <md-checkbox  [(ngModel)]="permission.permissions.close_day"[disabled]="inputs_disabled" ></md-checkbox><br>
+              הצהרת קופאי <md-checkbox [(ngModel)]="permission.permissions.start_cash" [disabled]="inputs_disabled" ></md-checkbox><br>
+              x דוח <md-checkbox [(ngModel)]="permission.permissions.x_report" [disabled]="inputs_disabled"></md-checkbox><br>
+              חיפוש חשבונית <md-checkbox [(ngModel)]="permission.permissions.invoice_search" [disabled]="inputs_disabled" ></md-checkbox><br><br><br>
+
+            </div>
+            
+
+        </div>
+
+    </div>
+    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="quary" placeholder="חיפוש הרשאה">
+            <span class="input-group-addon"><md-icon>search</md-icon></span>
+          </div>
+      
+          <md-list style="text-align:right">
+            <h3 md-subheader>הרשאות</h3>
+            <md-divider></md-divider>
+
+          </md-list>
+                  <div class="row">
+
+                      <md-card (click)="per_selected(per)" style="margin:10px;height:40px;width:28%;float:right;padding-left:10px; padding-top:10px;text-align:right" *ngFor="let per of permissions | async">
+
+                                {{per.name}}
+
+                            <md-icon md-button class="edit_btn" (click)="edit_permission(per);$event.stopPropagation()">settings</md-icon>
+                      </md-card>
+        </div>
+           
+  </div>
+
+
+  </div>
+
+</div>
+

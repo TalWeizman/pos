@@ -1,0 +1,68 @@
+<md-toolbar>
+  
+      <button class="add_button" md-fab [disabled]="!new_item" (click)="add_new_item()" ><md-icon >add</md-icon></button>
+
+      <button class="add_button" md-fab [disabled]="!trash" (click)="delete_item()" ><md-icon>delete</md-icon></button>
+
+      <button class="add_button" md-fab [disabled]="!save" (click)="save_item()" ><md-icon>save</md-icon></button>
+      
+      <span class="fill-space"></span>
+      <h2>ניהול מוצרים</h2>
+  
+</md-toolbar>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+    
+    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;overflow:auto;height:100%"> 
+      <img [src]="item.img64" name="aboutme" width="100" height="100" class="img-circle" style="margin:20px;position:relative;float:left">
+
+  <br>
+  <md-checkbox [disabled]="inputs_disabled" [(ngModel)]="item.is_active">פעיל</md-checkbox>
+  <br> <br>
+
+  <p style="padding-top:32px;">שם הפריט</p>
+  <input type="text" [(ngModel)]="item.name" [disabled]="inputs_disabled" class="form-control" placeholder="שם המוצר">
+  <br>
+      <p>מחיר הפריט</p>
+  <input type="text" [(ngModel)]="item.price" [disabled]="inputs_disabled"  class="form-control" placeholder="מחיר פריט">
+  <br>
+    <p>הוסף תמונה</p>
+  <input type="file" name="file" [disabled]="inputs_disabled"  (change)="onChange($event)" class="form-control" placeholder="הוסף/החלף תמונה">
+<br>
+ <p>בחר קטגוריה <span style="float:left;cursor: pointer"><a (click)="go_to_categories()"> הוסף קטגוריה חדשה +</a></span> </p>
+  <select class="form-control" [disabled]="inputs_disabled" [(ngModel)]="item.category">
+    <option></option>
+    <option *ngFor="let cat of categories">{{cat.$value}}</option>
+  </select>
+
+    </div>
+    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      
+  <div class="input-group">
+    <input type="text" class="form-control" [(ngModel)]="quary" placeholder="חיפוש מוצר">
+    <span class="input-group-addon"><md-icon>search</md-icon></span>
+  </div>
+      
+          <md-list dense style="text-align:right">
+            <h3 md-subheader>מוצרים</h3>
+            <md-divider></md-divider>
+            <div style="overflow:auto;max-height: 350px">
+  
+            <md-list-item class="item" *ngFor="let item of items | itemFilter : quary;" (click)="item_selected(item)">
+              <md-icon md-button md-list-icon class="edit_btn" (click)="edit_product(item);$event.stopPropagation()">edit</md-icon>
+              <h4 md-line>{{item.name}}</h4>
+              <p md-line>{{item.price}}</p>
+            </md-list-item>
+            <md-divider></md-divider>
+
+            </div>
+          </md-list>
+    
+    </div>
+  </div>
+</div>

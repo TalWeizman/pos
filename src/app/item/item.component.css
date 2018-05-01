@@ -1,0 +1,47 @@
+.item {
+    
+    min-width: 150px;
+    min-height: 150px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: 5px;
+    cursor: pointer;
+/*    
+    background-image: url("https://placehold.it/150x150"); */
+    background-size: 100% 100%;
+
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.item-price{
+
+    position: relative;
+    background-color: wheat;
+    bottom: 17px;
+    width: 80px;
+    text-align: left;
+    border-radius: 4px;
+    padding: 0 5px 0 5px;
+    opacity: 0.5;
+    color: red;
+}
+
+.item-name{
+
+    position: relative;
+    background-color: lightgrey;
+    top: 78px;
+    text-align: right;
+    padding: 0 5px 0 5px;
+    opacity: 0.5;
+    color: black;
+}

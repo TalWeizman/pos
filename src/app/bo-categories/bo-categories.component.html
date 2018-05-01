@@ -1,0 +1,60 @@
+<md-toolbar>
+  
+      <button class="add_button" md-fab [disabled]="!new_cat" (click)="add_new_cat()" ><md-icon >add</md-icon></button>
+
+      <span class="fill-space"></span>
+      <h2>ניהול קטגוריות</h2>
+  
+  
+  
+
+</md-toolbar>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+    
+    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;overflow:auto;height:100%"> 
+
+
+    </div>
+    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      
+  <div class="input-group">
+    <input type="text" class="form-control" [(ngModel)]="quary" placeholder="חיפוש קטגוריה">
+    <span class="input-group-addon"><md-icon>search</md-icon></span>
+  </div>
+      
+    
+
+          <md-list style="text-align:right">
+            <h3 md-subheader>קטגוריות</h3>
+            <md-divider></md-divider>
+        
+  
+<!--            <md-list-item class="item" *ngFor="let cat of categories | itemFilter : quary;" (click)="cat_selected(categories.indexOf(cat))">
+              <md-icon md-button md-list-icon class="edit_btn" (click)="delete_category(categories.indexOf(cat));$event.stopPropagation()">delete</md-icon>
+              <h4 md-line>{{cat.$value}}</h4>
+            </md-list-item>
+            <md-divider></md-divider>-->
+
+          </md-list>
+     
+    </div>
+  </div>
+        <div class="row">
+
+                      <md-card style="margin:10px;height:40px;width:23%;float:right;padding-left:10px; padding-top:10px;text-align:right" *ngFor="let cat of categories | async | catFilter : quary">
+
+                                {{cat.$value}}
+
+                            <md-icon md-button class="edit_btn" (click)="delete_cat(cat.$key);$event.stopPropagation()">delete</md-icon>
+                      </md-card>
+
+
+        </div>
+
+</div>
